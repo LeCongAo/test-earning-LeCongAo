@@ -24,6 +24,7 @@ const maxNumberInArr = (arr) => {
 }
 maxNumberInArr(listArr2)
 
+// cau 2
 const myRandom = (arrRandom) => {
   return Math.round(Math.random() * (arrRandom.length - 1))
 }
@@ -89,11 +90,9 @@ const Arr6Items = (arrList) => {
 function Home() {
   // cau 2
   const GetData = useGetData()
-
   const arr24Items = useMemo(() => getRandom24Items(GetData), [GetData])
   const arr18Items = useMemo(() => getRandom18Items(arr24Items), [arr24Items])
   const arr6Items = useMemo(() => Arr6Items(arr18Items), [arr18Items])
-  console.log('arr6Items', arr6Items)
 
   const [isClass, setClass] = useState(false)
   const [count, setCount] = useState(2)
@@ -122,7 +121,7 @@ function Home() {
       if (navigator.clipboard) {
         navigator.clipboard.writeText(contentText)
       }
-    }, 30000000)
+    }, 3000)
     return () => clearInterval(interval)
   }
 
